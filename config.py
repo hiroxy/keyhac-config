@@ -1,10 +1,11 @@
-import accessibility
-import ckit
 import os.path
 import re
 import sys
 import time
+import ckit
 from ckit.ckit_const import *
+import accessibility
+
 from keyhac import *
 from keyhac_hook import *
 from keyhac_keymap import *
