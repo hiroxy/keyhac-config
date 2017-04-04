@@ -12,8 +12,6 @@ from keyhac_keymap import *
 
 def configure(keymap):
     keymap.editor = "Emacs"
-    keymap.setFont("Ricty", 14)
-    keymap.setTheme("black")
 
     apps_not_being_emacs_key = [
         "org.gnu.Emacs",
@@ -27,7 +25,6 @@ def configure(keymap):
     side_of_ctrl_key = "L"
     side_of_alt_key = "L"
     use_esc_as_meta = False
-    ctl_x_prefix_key = "C-x"
 
     class Fakeymacs:
         pass
