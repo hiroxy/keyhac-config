@@ -295,9 +295,11 @@ def configure(keymap):
     def mark(func):
         def _func():
             if fakeymacs.is_marked:
-                self_insert_command("D-Shift")()
+                # If D-Shift is used, it is cancelled when M-< or M-> is used
+                self_insert_command("D-LShift", "D-RShift")()
+                delay()
                 func()
-                self_insert_command("U-Shift")()
+                self_insert_command("U-LShift", "U-RShift")()
             else:
                 func()
         return _func
