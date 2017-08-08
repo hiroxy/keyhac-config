@@ -19,6 +19,7 @@ def configure(keymap):
         "com.apple.Terminal",
         "org.virtualbox.app.VirtualBoxVM",
         "com.microsoft.rdc.mac",
+        "com.microsoft.VSCode",
     ]
 
     is_japanese_keyboard = False
