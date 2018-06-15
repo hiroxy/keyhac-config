@@ -179,7 +179,7 @@ def configure(keymap):
 
     def isearch(direction):
         if fakeymacs.is_searching:
-            self_insert_command({"backward":"Cmd-S-g", "forward":"Cmd-g"}[direction])()
+            self_insert_command({"backward": "Cmd-S-g", "forward": "Cmd-g"}[direction])()
         else:
             self_insert_command("Cmd-f")()
             keymap_emacs.is_searching = True
@@ -248,9 +248,9 @@ def configure(keymap):
         keys_list = [keys.split()]
         for key in keys_list:
             # TODO: Do we need to check "C-M-"?
-            key[0] =  key[0].replace("C-", side_of_ctrl_key + "Ctrl-", 1)
-            key[0] =  key[0].replace("A-", side_of_ctrl_key + "Alt-", 1)
-            key[0] =  key[0].replace("S-", "Shift-", 1)
+            key[0] = key[0].replace("C-", side_of_ctrl_key + "Ctrl-", 1)
+            key[0] = key[0].replace("A-", side_of_ctrl_key + "Alt-", 1)
+            key[0] = key[0].replace("S-", "Shift-", 1)
             if key[0].startswith("M-"):
                 k = key[0].replace("M-", "", 1)
                 key[0] = side_of_alt_key + "Alt-" + k
@@ -259,8 +259,8 @@ def configure(keymap):
                     keys_lists.append(["Esc", k])
 
             if len(key) == 2:
-                key[1] =  key[1].replace("C-", side_of_ctrl_key + "Ctrl-", 1)
-                key[1] =  key[1].replace("S-", "Shift-", 1)
+                key[1] = key[1].replace("C-", side_of_ctrl_key + "Ctrl-", 1)
+                key[1] = key[1].replace("S-", "Shift-", 1)
 
             keys_lists.append(key)
 
