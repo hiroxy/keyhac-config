@@ -201,7 +201,7 @@ def configure(keymap):
         self_insert_command("Cmd-q")()
 
     def universal_argument():
-        if fakeymacs.emacs.is_universal_argument:
+        if fakeymacs.is_universal_argument:
             if fakeymacs.is_digit_argument == True:
                 fakeymacs.is_universal_argument = False
             else:
@@ -428,3 +428,4 @@ def configure(keymap):
     define_key(keymap_emacs, "C-i",     reset_search(reset_counter(reset_mark(tab))))
     define_key(keymap_emacs, "C-g",     reset_search(reset_counter(reset_mark(keyboard_quit))))
     define_key(keymap_emacs, "C-x C-c", reset_search(reset_undo(reset_counter(reset_mark(kill_emacs)))))
+    define_key(keymap_emacs, "C-u",     reset_undo(universal_argument))
