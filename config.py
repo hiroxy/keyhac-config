@@ -276,15 +276,12 @@ def configure(keymap):
     def self_insert_command(*keys):
         return keymap.InputKeyCommand(*list(map(addSideModifier, keys)))
 
-    def self_insert_command2(*keys):
-        return self_insert_command(*keys)
-
     def digit(number):
         def _func():
             if fakeymacs.is_universal_argument:
                 digit_argument(number)
             else:
-                reset_undo(reset_counter(reset_mark(repeat(self_insert_command2(str(number))))))()
+                reset_undo(reset_counter(reset_mark(repeat(self_insert_command(str(number))))))()
         return _func
 
     def digit2(number):
@@ -364,7 +361,6 @@ def configure(keymap):
         define_key(keymap_emacs,        k, digit(key))
         define_key(keymap_emacs, "C-" + k, digit2(key))
         define_key(keymap_emacs, "M-" + k, digit2(key))
-        define_key(keymap_emacs, "S-" + k, reset_undo(reset_counter(reset_mark(repeat(self_insert_command2("S-" + k))))))
 
     ## file operations
     define_key(keymap_emacs, "C-x C-f", reset_search(reset_undo(reset_counter(reset_mark(find_file)))))
