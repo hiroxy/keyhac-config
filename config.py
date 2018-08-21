@@ -20,6 +20,7 @@ def configure(keymap):
         "org.virtualbox.app.VirtualBoxVM",
         "com.microsoft.rdc.mac",
         "com.microsoft.VSCode",
+        "com.vmware.fusion",
     ]
 
     is_japanese_keyboard = False
