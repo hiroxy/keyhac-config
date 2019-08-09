@@ -21,6 +21,7 @@ def configure(keymap):
         "com.microsoft.rdc.mac",
         "com.microsoft.VSCode",
         "com.vmware.fusion",
+        "io.alacritty",
     ]
 
     is_japanese_keyboard = False
